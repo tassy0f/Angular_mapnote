@@ -1,14 +1,18 @@
-import { Directive, ElementRef, OnInit } from '@angular/core';
+import { Directive, ElementRef, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 @Directive({
   selector: '[appAttrDirective]'
 })
-export class AttrDirective implements OnInit {
+export class AttrDirective implements OnChanges {
 
+  @Input() value:object;
   constructor(private el: ElementRef) { 
     
   }
-    ngOnInit(): void {
-        this.el.nativeElement.style.backgroundColor = 'yellow';   
-      }
+    ngOnChanges(): void {
+        for (let k in this.value) {
+          this.el.nativeElement.setAttribute(k, this.value[k]);
+          
+        }
+    }
 }
