@@ -1,0 +1,19 @@
+<div class="cart">
+  <div class="cart_head">
+    <h3 class="cart_name">{{name}}</h3>
+    <ng-container *ngIf="paymentSystem=='visa'; then visa; else mastercart"></ng-container>
+    <ng-template #visa>
+        <img src="assets/visa.svg" alt="" class="cart_img">
+    </ng-template>
+    <ng-template #mastercart>
+        <img src="assets/mastercart.svg" alt="" class="cart_img">
+    </ng-template>
+  </div>
+  <div class="cart_body">
+    <h1 class="cart_number" id="mask">{{number}}</h1>
+  </div>
+  <div class="cart_footer">
+    <h1 class="cart_value">{{amount}}</h1>
+    <h4 class="cart_date">{{expirationDate}}</h4>
+  </div>
+</div>
