@@ -1,8 +1,10 @@
-<!-- <app-card
+<app-card
 name="Sberbank"
 number="0101 1100 1001 0111"
-amount="3 549 000,33₽"
+amount="{{ 3549000.33 | locateCurrency: 'ru-RU' }}₽"
 expirationDate="02/33"
 paymentSystem="mastercard"
-></app-card> -->
+></app-card>
 <p appAttrDirective [value]="{ id: 'test' }">Синтаксис атрибутной директивы</p>
+<p>{{ 24637423.123 | locateCurrency: 'ru-RU' }}</p>
+<p>{{ 24637423.123 | locateCurrency: 'en-US' }}</p>
