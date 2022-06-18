@@ -11,3 +11,36 @@ paymentSystem="mastercard"
 
 <p>Start counting time</p>
 <output id="timer-output"></output>
+
+<form class="form" [formGroup]="productForm">
+    <div class="input_field">
+        <label>ID</label>
+        <input id="id" type="text" formControlName="id" />
+        <button type="button" (click)="onClickGenerateID()">Generate</button>
+    </div>
+
+    <div class="input_field">
+        <label>Name</label>
+        <input id="name" type="text" formControlName="name" />
+    </div>
+
+    <div class="input_field">
+        <label>Price</label>
+        <input id="price" type="number" formControlName="price" />
+    </div>
+
+    <div class="input_field">
+        <label>Categories</label>
+        <select formControlName="categories">
+            <option value="clothes">Одежда</option>
+            <option value="shoes">Обувь</option>
+            <option value="medicines">Лекарства</option>
+            <option value="food">Еда</option>
+            <option value="electronics">Электроника</option>
+        </select>
+    </div>
+
+    <div class="input_field">
+        <button type="button" (click)="onSubmit()">Submit</button>
+    </div>
+</form>
